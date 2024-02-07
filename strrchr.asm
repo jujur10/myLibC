@@ -1,27 +1,32 @@
 bits 64
 global my_strrchr
-extern my_strlen
 
 section .text
         my_strrchr:
-                mov rdx, rdi
-                call my_strlen
-                mov rcx, rax
-                mov rax, rdx
-                add rax, rcx
-                sub rax, 1
+                mov rax, rdi
+                mov rdx, rdi ; TEMP
 
                 begin:
                 cmp byte [rax], 0
-                je failure
+                je zero_case
                 cmp byte [rax], sil
-                je success
-                dec rax
+                je save
+                inc rax
                 jmp begin
 
-                failure:
-                xor rax, rax
+                save:
+                mov rdx, rax
+                inc rax
+                jmp begin
+
+                zero_case:
+                cmp byte [rax], sil
+                je success_zero
+                jne success
+
+                success_zero:
                 ret
 
                 success:
+                mov rax, rdx
                 ret

@@ -1,9 +1,10 @@
 bits 64
-global my_strchr
 
 section .text
+        global my_strchr
         my_strchr:
                 mov rax, rdi
+
                 begin:
                 cmp byte [rax], 0
                 je failure
@@ -11,8 +12,12 @@ section .text
                 je end
                 inc rax
                 jmp begin
+
                 failure:
+                cmp rsi, 0
+                je end
                 xor rax, rax
                 ret
+
                 end:
                 ret
