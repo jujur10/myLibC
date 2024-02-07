@@ -1,8 +1,8 @@
 bits 64
+global strlen
 
 section .text
-        global my_strlen
-        my_strlen:
+        strlen:
             mov rax, rdi
             xor rcx, rcx
 

@@ -1,8 +1,8 @@
 bits 64
-global my_strrchr
+global strrchr
 
 section .text
-        my_strrchr:
+        strrchr:
                 mov rax, rdi
                 mov rdx, rdi ; TEMP
 

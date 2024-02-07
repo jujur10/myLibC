@@ -1,8 +1,8 @@
 bits 64
-global my_memcpy
+global memcpy
 
 section .text
-        my_memcpy:
+        memcpy:
                 mov rax, rdi
                 cmp rdi, rsi
                 je end

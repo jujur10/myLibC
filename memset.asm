@@ -1,8 +1,8 @@
 bits 64
-global my_memset
+global memset
 
 section .text
-        my_memset:
+        memset:
                 mov r8, rdi
 
                 begin:

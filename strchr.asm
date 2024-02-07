@@ -1,7 +1,7 @@
 bits 64
+global my_strchr
 
 section .text
-        global my_strchr
         my_strchr:
                 mov rax, rdi
 
