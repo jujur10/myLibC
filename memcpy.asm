@@ -4,8 +4,6 @@ global memcpy
 section .text
         memcpy:
                 mov rax, rdi
-                cmp rdi, rsi
-                je end
 
                 begin:
                 cmp rdx, 0
