@@ -12,7 +12,8 @@ SRCS =	strchr.asm \
 		memset.asm \
 		memcpy.asm \
 		strncmp.asm \
-		strcmp.asm
+		strcmp.asm \
+		strcasecmp.asm
 
 OBJ_DIR = obj
 
