@@ -1,8 +1,8 @@
 bits 64
-global my_strchr
+global strchr
 
 section .text
-        my_strchr:
+        strchr:
                 mov rax, rdi
 
                 begin:

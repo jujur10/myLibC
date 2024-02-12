@@ -1,8 +1,8 @@
 bits 64
-global my_strcmp
+global strcmp
 
 section .text
-        my_strcmp:
+        strcmp:
                 begin:
                 mov cl, byte [rdi]
                 mov dl, byte [rsi]

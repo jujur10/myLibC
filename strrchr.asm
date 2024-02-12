@@ -1,8 +1,8 @@
 bits 64
-global strrchr
+global my_strrchr
 
 section .text
-        strrchr:
+        my_strrchr:
                 mov rax, rdi
                 mov rdx, rdi ; TEMP
 
@@ -28,5 +28,11 @@ section .text
                 ret
 
                 success:
+                cmp rdx, rdi
+                je failure
                 mov rax, rdx
+                ret
+
+                failure:
+                xor rax, rax
                 ret
