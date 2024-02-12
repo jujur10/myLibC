@@ -1,5 +1,5 @@
 bits 64
-global my_strstr
+global strstr
 
 section .text
         is_word:
@@ -27,7 +27,7 @@ section .text
                 mov rax, 1
                 ret
 
-        my_strstr:
+        strstr:
                 mov r8, rdi     ; Save src
                 mov r9, rsi     ; Save to_find
                 cmp rsi, 0
