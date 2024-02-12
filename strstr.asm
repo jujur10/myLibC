@@ -32,7 +32,7 @@ section .text
                 mov r9, rsi     ; Save to_find
                 ;cmp rdi, rsi
                 ;je success_str
-                cmp rsi, 0
+                cmp byte [rsi], 0
                 je success_str
 
                 begin_str:
