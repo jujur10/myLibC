@@ -2,26 +2,35 @@ bits 64
 global strncmp
 
 section .text
-    strncmp:
-        xor rax, rax
+        strncmp:
+        cmp rdx, 0
+        je zero
+        dec rdx
 
         begin:
-        cmp rdx, 0
-        je success
         mov cl, byte [rdi]
-        mov dl, byte [rsi]
-        cmp cl, dl
-        jne failure
+        mov r9b, byte [rsi]
+        cmp cl, 0
+        je end
+        cmp r9b, 0
+        je end
+        cmp cl, r9b
+        jne end
         inc rdi
         inc rsi
+        cmp rdx, 0
+        jle end
         dec rdx
         jmp begin
 
-        success:
+        zero:
+        xor rax, rax
         ret
 
-        failure:
-        movzx rax, cl
-        movzx r8, dl
+        end:
+        xor rax, rax
+        xor r8, r8
+        mov al, cl
+        mov r8b, r9b
         sub rax, r8
         ret
