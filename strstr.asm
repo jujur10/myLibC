@@ -30,6 +30,8 @@ section .text
         strstr:
                 mov r8, rdi     ; Save src
                 mov r9, rsi     ; Save to_find
+                ;cmp rdi, rsi
+                ;je success_str
                 cmp rsi, 0
                 je success_str
 
