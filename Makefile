@@ -16,7 +16,8 @@ SRCS =	strchr.asm \
 		memmove.asm \
 		strstr.asm \
 		strpbrk.asm \
-		strcspn.asm
+		strcspn.asm \
+		ffs.asm
 
 OBJ_DIR = obj
 

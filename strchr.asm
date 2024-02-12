@@ -2,6 +2,7 @@ bits 64
 global strchr
 
 section .text
+        index:
         strchr:
                 mov rax, rdi
 

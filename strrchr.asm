@@ -2,6 +2,7 @@ bits 64
 global strrchr
 
 section .text
+        rindex:
         strrchr:
                 mov rax, rdi
                 mov rdx, rdi ; TEMP
