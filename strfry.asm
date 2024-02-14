@@ -1,5 +1,5 @@
 bits 64
-global strfry
+global my_strfry
 
 section .text
         get_length:
@@ -11,7 +11,7 @@ section .text
         end_len:
         ret
 
-        strfry:
+        my_strfry:
         xor rax, rax
         xor r10, r10
         xor r8, r8      ; Index
@@ -19,6 +19,8 @@ section .text
         xor rcx, rcx
         call get_length
         mov r9, rax     ; Length
+        cmp r9, 0
+        je end
         dec r9
         jmp begin
 
@@ -37,6 +39,8 @@ section .text
         mov r10, r9
         inc r10
         div r10
+        cmp rdx, 0
+        je end
         jmp swap
 
         end:
