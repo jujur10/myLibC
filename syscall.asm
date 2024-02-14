@@ -1,8 +1,8 @@
 bits 64
-global my_syscall
+global syscall
 
 section .text
-        my_syscall:
+        syscall:
         mov rax, rdi
         mov rdi, rsi
         mov rsi, rdx
