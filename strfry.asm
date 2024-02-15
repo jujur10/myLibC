@@ -1,5 +1,5 @@
 bits 64
-global my_strfry
+global strfry
 
 section .text
         get_length:
@@ -11,7 +11,7 @@ section .text
         end_len:
         ret
 
-        my_strfry:
+        strfry:
         xor rax, rax
         xor r10, r10
         xor r8, r8      ; Index
@@ -26,7 +26,7 @@ section .text
 
         swap:
         mov sil, byte [rdi + rdx]       ; Value at the randomized index
-        mov cl, byte [rdi + r8] ; Current value
+        mov cl, byte [rdi + r8]         ; Current value
         mov byte [rdi + rdx], cl
         mov byte [rdi + r8], sil
         inc r8
