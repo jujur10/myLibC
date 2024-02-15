@@ -9,10 +9,10 @@ section .text
         mov rdx, r10
         mov r10, r8
         mov r8, r9
-        xor r9, r9
+        mov r9, [rsp + 8]
         syscall
         cmp rax, -1
-        jl error
+        jle error
         ret
 
         error:
