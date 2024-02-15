@@ -1,5 +1,6 @@
 bits 64
 global strchr
+global index
 
 section .text
         index:

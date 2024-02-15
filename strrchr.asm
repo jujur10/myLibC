@@ -1,5 +1,6 @@
 bits 64
 global strrchr
+global rindex
 
 section .text
         rindex:
