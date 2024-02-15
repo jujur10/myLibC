@@ -19,7 +19,8 @@ SRCS =	strchr.asm \
 		strcspn.asm \
 		ffs.asm \
 		strfry.asm \
-		memfrob.asm
+		memfrob.asm \
+		syscall.asm
 
 OBJ_DIR = obj
 
