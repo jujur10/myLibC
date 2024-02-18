@@ -1,6 +1,6 @@
-global strlen_arm
+.global strlen_arm
 
-section .text
+.text
         strlen_arm:
         eor r1, r1
 

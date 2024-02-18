@@ -1,6 +1,6 @@
-global max_arm
+.global max_arm
 
-section .text
+.text
         max_arm:
         eor r2, r2
 
